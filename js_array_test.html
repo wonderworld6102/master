@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:float="http://www.w3.org/1999/xhtml">
+
+<head>
+
+</head>
+<title>Test Array in JS</title>
+<body>
+
+<div id="var1"></div><input type="text" id="inVal1"/>
+<div id="var2"></div><input type="text" id="inVal2"/>
+<div id="var3"></div><input type="text" id="inVal3"/>
+<div id="var4"></div><input type="text" id="inVal4"/>
+<p id="resultP"></p>
+<br>
+<div id="rsltV"></div> <input type="text" id="result"/>
+
+<script type="text/javascript">
+var nVal1 = document.getElementById("inVal1").value;
+document.getElementById("var1").innerText = nVal1;
+var nVal2 = document.getElementById("inVal2").value;
+document.getElementById("var2").innerText = nVal2;
+var nVal3 = document.getElementById("inVal3").value;
+document.getElementById("var3").innerText = nVal3;
+var ar = [parseFloat(nVal1),parseFloat(nVal2),parseFloat(nVal3)];
+
+//document.getElementById("result").value = ar[0].concat(" ").concat(ar[1]).concat(" ").concat(ar[2]);
+//document.getElementById("inVal4").value = ar.filter(function(x){return x==20;});
+
+var out = document.getElementById("resultP");
+ar.forEach(function(ar,i)
+{
+ out.innerHTML = out.innerHTML + "index[" + i + "]: " + ar + "<br />"; 
+});
+
+//================ array indexOf ================
+
+var dd = ['a','b','c','d'];
+var res = dd.indexOf('c');
+console.log("[array.indexOf function: ]" + res);
+
+//================ array join ================
+
+var sArr = ["let","it","be","!"];
+var rslt = sArr.join();
+console.log("[array join result:]" + rslt);
+console.log("[array join result:]" + sArr.join("_"));
+console.log("[array join result:]" + sArr.join(" "));
+//================ array lastIndexOf ================
+
+var bb = ['a','b','F','d','e','F','g'];
+console.log("[array.lastIndexOf : ]" + bb.lastIndexOf('F'));
+//================ array map ================
+var cc = [10,20,30,40,50,60,70];
+var ee = cc.map(Math.sqrt);
+console.log("[array.map : ] " + ee[0] + " " + ee[1]);
+//================ array pop ================
+console.log("[array.pop : ] " + cc.pop() + " " + cc.pop());
+
+//================ array push ================
+console.log("[array.push : ] " + cc.push(111) + " " + cc.push(222));
+console.log("[array.push : ] " + cc.pop() + " " + cc.pop());
+//================ array reduce ================
+
+console.log("[array reduce]: " + [1,2,3,4,5].reduce(function(x,y) { return x*y;}));
+
+//================ array reduceRight ================
+console.log("[array reduceRight]: " + ["over." ," is "," all "," me "," tells "," Something "].reduceRight(function(x,y) { return x.concat(y);}));
+ 
+//================ array reverse ================
+console.log("[array reverse]" + ["same." , "the"," remains "," heart "," My "].reverse());
+//================ array shift ================
+console.log("[array shift]" + cc.shift());
+console.log("[array shift]" + cc.shift());
+console.log("[array shift]" + cc.shift());
+
+//================ array unshift ================
+var lord = ["Duke","Wellington"];
+console.log("[array unshift]: " + lord.unshift(" HMS "));
+console.log("[array unshift]: " + lord.join(" "));
+//================ array slice ================
+var ff = [1,2,3,4,5,6,7,8,9];
+console.log("[array slice]: " + ff.slice(1,4));
+console.log("[array slice]: " + ff.slice(3,6));
+//================ array some ================
+console.log("[array some]: " + [1,2,3].some(function(x) { return x > 2; }));
+
+//================ array sort ================
+console.log("[array sort]: " + [1,2,3,7,0,9,34,5,3].sort());
+
+//================ array splice ================
+var gg = [1,2,3,7,0,9,34,5,3];
+console.log("[array splice]: " + gg.splice(3,2,99,99));
+
+
+
+//================ string split ================
+var sSomeStr = "Let it be !";
+sArr = sSomeStr.split(" ");
+console.log("[string split result:] " + sArr[0] + " " + sArr[1]);
+
+
+</script>
+</body>
+</html>
